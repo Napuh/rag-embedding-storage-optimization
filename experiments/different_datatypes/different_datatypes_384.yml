@@ -1,0 +1,100 @@
+model_name: "BAAI/bge-small-en-v1.5"
+
+tasks:
+  - AppsRetrieval
+  - CodeFeedbackMT
+  - CosQA
+  - StackOverflowQA
+  - SyntheticText2SQL
+  - AILACasedocs
+  - AILAStatutes
+  - ARCChallenge
+  - ArguAna
+  - ClimateFEVERHardNegatives
+  - CQADupstackAndroidRetrieval
+  - CQADupstackEnglishRetrieval
+  - CQADupstackGamingRetrieval
+  - CQADupstackGisRetrieval
+  - CQADupstackMathematicaRetrieval
+  - CQADupstackPhysicsRetrieval
+  - CQADupstackProgrammersRetrieval
+  - CQADupstackStatsRetrieval
+  - CQADupstackTexRetrieval
+  - CQADupstackUnixRetrieval
+  - CQADupstackWebmastersRetrieval
+  - CQADupstackWordpressRetrieval
+  - DBPediaHardNegatives
+  - FaithDial
+  - FeedbackQARetrieval
+  - FEVERHardNegatives
+  - FiQA2018
+  - HagridRetrieval
+  - HellaSwag
+  - HotpotQAHardNegatives
+  - LegalBenchConsumerContractsQA
+  - LegalBenchCorporateLobbying
+  - LegalSummarization
+  - LEMBNarrativeQARetrieval
+  - LEMBNeedleRetrieval
+  - LEMBPasskeyRetrieval
+  - LEMBQMSumRetrieval
+  - LEMBSummScreenFDRetrieval
+  - LEMBWikimQARetrieval
+  - LitSearchRetrieval
+  - MedicalQARetrieval
+  - MLQuestions
+  - MSMARCOHardNegatives
+  - NarrativeQARetrieval
+  - NFCorpus
+  - NQHardNegatives
+  - PIQA
+  - Quail
+  - QuoraRetrieval
+  - QuoraRetrievalHardNegatives
+  - RARbCode
+  - RARbMath
+  - SCIDOCS
+  - SciFact
+  - SIQA
+  - SpartQA
+  - TempReasonL1
+  - TempReasonL2Context
+  - TempReasonL2Fact
+  - TempReasonL2Pure
+  - TempReasonL3Context
+  - TempReasonL3Fact
+  - TempReasonL3Pure
+  - TopiOCQAHardNegatives
+  - Touche2020Retrieval.v3
+  - TRECCOVID
+  - WinoGrande
+
+experiments:
+  - name: float32
+    quantization_type: FLOAT32
+    reduction_method: null
+
+  - name: float16
+    quantization_type: FLOAT16
+    reduction_method: null
+
+  - name: bfloat16
+    quantization_type: BFLOAT16
+    reduction_method: null
+
+  - name: float8_e4m3
+    quantization_type: FLOAT8_E4M3
+    reduction_method: null
+
+  - name: float8_e5m2
+    quantization_type: FLOAT8_E5M2
+    reduction_method: null
+
+  - name: binary
+    quantization_type: BINARY
+    reduction_method: null
+
+  - name: int8
+    quantization_type: INT8
+    reduction_method: null
+    calibration_dataset: "MLQuestions"

@@ -1,0 +1,108 @@
+model_name: "nomic-ai/nomic-embed-text-v1.5"
+
+tasks:
+  - AppsRetrieval
+  - CodeFeedbackMT
+  - CosQA
+  - StackOverflowQA
+  - SyntheticText2SQL
+  - AILACasedocs
+  - AILAStatutes
+  - ARCChallenge
+  - ArguAna
+  - ClimateFEVERHardNegatives
+  - CQADupstackAndroidRetrieval
+  - CQADupstackEnglishRetrieval
+  - CQADupstackGamingRetrieval
+  - CQADupstackGisRetrieval
+  - CQADupstackMathematicaRetrieval
+  - CQADupstackPhysicsRetrieval
+  - CQADupstackProgrammersRetrieval
+  - CQADupstackStatsRetrieval
+  - CQADupstackTexRetrieval
+  - CQADupstackUnixRetrieval
+  - CQADupstackWebmastersRetrieval
+  - CQADupstackWordpressRetrieval
+  - DBPediaHardNegatives
+  - FaithDial
+  - FeedbackQARetrieval
+  - FEVERHardNegatives
+  - FiQA2018
+  - HagridRetrieval
+  - HellaSwag
+  - HotpotQAHardNegatives
+  - LegalBenchConsumerContractsQA
+  - LegalBenchCorporateLobbying
+  - LegalSummarization
+  - LEMBNarrativeQARetrieval
+  - LEMBNeedleRetrieval
+  - LEMBPasskeyRetrieval
+  - LEMBQMSumRetrieval
+  - LEMBSummScreenFDRetrieval
+  - LEMBWikimQARetrieval
+  - LitSearchRetrieval
+  - MedicalQARetrieval
+  - MLQuestions
+  - MSMARCOHardNegatives
+  - NarrativeQARetrieval
+  - NFCorpus
+  - NQHardNegatives
+  - PIQA
+  - Quail
+  - QuoraRetrieval
+  - QuoraRetrievalHardNegatives
+  - RARbCode
+  - RARbMath
+  - SCIDOCS
+  - SciFact
+  - SIQA
+  - SpartQA
+  - TempReasonL1
+  - TempReasonL2Context
+  - TempReasonL2Fact
+  - TempReasonL2Pure
+  - TempReasonL3Context
+  - TempReasonL3Fact
+  - TempReasonL3Pure
+  - TopiOCQAHardNegatives
+  - Touche2020Retrieval.v3
+  - TRECCOVID
+  - WinoGrande
+
+experiments:
+
+  - name: float4_e2m1
+    quantization_type: FLOAT4_E2M1
+    reduction_method: null
+
+  - name: float4_e2m1_25PCA
+    quantization_type: FLOAT4_E2M1
+    reduction_method: PCA
+    reduction_fit_dataset: "MLQuestions"
+    pca_config:
+      n_components: 0.25
+      random_state: 42
+
+  - name: float4_e2m1_50PCA
+    quantization_type: FLOAT4_E2M1
+    reduction_method: PCA
+    reduction_fit_dataset: "MLQuestions"
+    pca_config:
+      n_components: 0.5
+      random_state: 42
+
+  - name: float4_e2m1_75PCA
+    quantization_type: FLOAT4_E2M1
+    reduction_method: PCA
+    reduction_fit_dataset: "MLQuestions"
+    pca_config:
+      n_components: 0.75
+      random_state: 42
+
+  - name: float4_e2m1_90PCA
+    quantization_type: FLOAT4_E2M1
+    reduction_method: PCA
+    reduction_fit_dataset: "MLQuestions"
+    pca_config:
+      n_components: 0.9
+      random_state: 42

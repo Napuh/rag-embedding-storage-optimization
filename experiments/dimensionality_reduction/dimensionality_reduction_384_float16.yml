@@ -1,0 +1,203 @@
+model_name: "BAAI/bge-small-en-v1.5"
+
+tasks:
+  - AppsRetrieval
+  - CodeFeedbackMT
+  - CosQA
+  - StackOverflowQA
+  - SyntheticText2SQL
+  - AILACasedocs
+  - AILAStatutes
+  - ARCChallenge
+  - ArguAna
+  - ClimateFEVERHardNegatives
+  - CQADupstackAndroidRetrieval
+  - CQADupstackEnglishRetrieval
+  - CQADupstackGamingRetrieval
+  - CQADupstackGisRetrieval
+  - CQADupstackMathematicaRetrieval
+  - CQADupstackPhysicsRetrieval
+  - CQADupstackProgrammersRetrieval
+  - CQADupstackStatsRetrieval
+  - CQADupstackTexRetrieval
+  - CQADupstackUnixRetrieval
+  - CQADupstackWebmastersRetrieval
+  - CQADupstackWordpressRetrieval
+  - DBPediaHardNegatives
+  - FaithDial
+  - FeedbackQARetrieval
+  - FEVERHardNegatives
+  - FiQA2018
+  - HagridRetrieval
+  - HellaSwag
+  - HotpotQAHardNegatives
+  - LegalBenchConsumerContractsQA
+  - LegalBenchCorporateLobbying
+  - LegalSummarization
+  - LEMBNarrativeQARetrieval
+  - LEMBNeedleRetrieval
+  - LEMBPasskeyRetrieval
+  - LEMBQMSumRetrieval
+  - LEMBSummScreenFDRetrieval
+  - LEMBWikimQARetrieval
+  - LitSearchRetrieval
+  - MedicalQARetrieval
+  - MLQuestions
+  - MSMARCOHardNegatives
+  - NarrativeQARetrieval
+  - NFCorpus
+  - NQHardNegatives
+  - PIQA
+  - Quail
+  - QuoraRetrieval
+  - QuoraRetrievalHardNegatives
+  - RARbCode
+  - RARbMath
+  - SCIDOCS
+  - SciFact
+  - SIQA
+  - SpartQA
+  - TempReasonL1
+  - TempReasonL2Context
+  - TempReasonL2Fact
+  - TempReasonL2Pure
+  - TempReasonL3Context
+  - TempReasonL3Fact
+  - TempReasonL3Pure
+  - TopiOCQAHardNegatives
+  - Touche2020Retrieval.v3
+  - TRECCOVID
+  - WinoGrande
+
+experiments:
+
+# Baseline
+
+  - name: float16
+    quantization_type: FLOAT16
+    reduction_method: null
+    reduction_fit_dataset: "MLQuestions"
+
+# 50 PCA
+
+  - name: float16_50PCA
+    quantization_type: FLOAT16
+    reduction_method: PCA
+    pca_config:
+      n_components: 0.5
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_50KPCA_cosine
+    quantization_type: FLOAT16
+    reduction_method: KPCA
+    kpca_config:
+      n_components: 0.5
+      kernel: "cosine"
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_50KPCA_rbf
+    quantization_type: FLOAT16
+    reduction_method: KPCA
+    kpca_config:
+      n_components: 0.5
+      kernel: "rbf"
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_50KPCA_poly
+    quantization_type: FLOAT16
+    reduction_method: KPCA
+    kpca_config:
+      n_components: 0.5
+      kernel: "poly"
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+  
+  - name: float16_50UMAP
+    quantization_type: FLOAT16
+    reduction_method: UMAP
+    umap_config:
+      n_components: 192
+      metric: "cosine"
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_50RP
+    quantization_type: FLOAT16
+    reduction_method: RP
+    rp_config:
+      n_components: 0.5
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_50AE # Combined Example
+    quantization_type: FLOAT16
+    reduction_method: AE
+    ae_config:
+      latent_dim: 0.5
+      hidden_dims: [512, 256]
+      epochs: 25
+    reduction_fit_dataset: "MLQuestions"
+
+# 75 PCA
+
+  - name: float16_75PCA
+    quantization_type: FLOAT16
+    reduction_method: PCA
+    pca_config:
+      n_components: 0.75
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_75KPCA_cosine
+    quantization_type: FLOAT16
+    reduction_method: KPCA
+    kpca_config:
+      n_components: 0.75
+      kernel: "cosine"
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_75KPCA_rbf
+    quantization_type: FLOAT16
+    reduction_method: KPCA
+    kpca_config:
+      n_components: 0.75
+      kernel: "rbf"
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_75KPCA_poly
+    quantization_type: FLOAT16
+    reduction_method: KPCA
+    kpca_config:
+      n_components: 0.75
+      kernel: "poly"
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+  
+  - name: float16_75UMAP
+    quantization_type: FLOAT16
+    reduction_method: UMAP
+    umap_config:
+      n_components: 288
+      metric: "cosine"
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_75RP
+    quantization_type: FLOAT16
+    reduction_method: RP
+    rp_config:
+      n_components: 0.75
+      random_state: 42
+    reduction_fit_dataset: "MLQuestions"
+
+  - name: float16_75AE # Combined Example
+    quantization_type: FLOAT16
+    reduction_method: AE
+    ae_config:
+      latent_dim: 0.75
+      hidden_dims: [512, 256]
+      epochs: 25
+    reduction_fit_dataset: "MLQuestions"

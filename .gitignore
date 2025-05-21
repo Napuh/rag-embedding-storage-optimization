@@ -1,0 +1,10 @@
+__pycache__/
+results**/
+saved_models/
+.DS_Store
+.env
+.venv
+.mteb_cache
+.cache
+.qdrant
+.ruff_cache
