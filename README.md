@@ -12,10 +12,7 @@
 
 [30/04/2025] Preprint available on [arXiv](https://arxiv.org/abs/2505.00105)
 
-[??/05/2025] Code available on Github
-
-[??/05/2025] Preprint available in [Papers with code](https://example.com)
-
+[22/05/2025] Code available on Github
 
 ## Abstract
 Retrieval-Augmented Generation enhances language models by retrieving relevant information from external knowledge bases, relying on high-dimensional vector embeddings typically stored in float32 precision. However, storing these embeddings at scale presents significant memory challenges.
